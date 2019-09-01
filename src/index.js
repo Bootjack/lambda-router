@@ -160,7 +160,10 @@ function Router({
   // Bound router functions
   return {
     beforeRoute: addMiddleware,
+    options: addRoute.bind(null, 'OPTIONS'),
+    head: addRoute.bind(null, 'HEAD'),
     get: addRoute.bind(null, 'GET'),
+    patch: addRoute.bind(null, 'PATCH'),
     post: addRoute.bind(null, 'POST'),
     put: addRoute.bind(null, 'PUT'),
     delete: addRoute.bind(null, 'DELETE'),
